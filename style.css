@@ -17,10 +17,14 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: var(--paper); color: var(--ink); }
 button, select { font: inherit; }
-.topbar { height: 74px; padding: 0 max(calc((100vw - 1080px) / 2), 5.5%); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #efede5; background: rgba(255,255,255,.84); }
+.topbar { min-height: 74px; padding: 0 max(calc((100vw - 1080px) / 2), 5.5%); display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid #efede5; background: rgba(255,255,255,.84); }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--green-dark); font-family: "Segoe UI", sans-serif; font-size: 18px; font-weight: 750; letter-spacing: -.8px; text-decoration: none; }
 .brand-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 12px; background: #e9efe5; color: var(--green); font-size: 20px; }
 .brand-period { color: var(--gold); }
+.meal-filters { display: flex; align-items: center; justify-content: center; gap: 4px; }
+.meal-filters button { padding: 9px 12px; border: 1px solid transparent; border-radius: 20px; background: transparent; color: #778579; font-size: 11px; cursor: pointer; transition: background .16s ease, color .16s ease; }
+.meal-filters button:hover, .meal-filters button[aria-pressed="true"] { border-color: #e4eade; background: #edf2e9; color: var(--green-dark); }
+.meal-filters button:focus-visible { outline: 2px solid #8aa48a; outline-offset: 2px; }
 .family-label { display: inline-flex; align-items: center; gap: 8px; color: #758177; font-size: 12px; }
 .family-label span { color: var(--green); font-size: 17px; }
 .page-shell { width: min(1080px, 89%); margin: 0 auto; padding-bottom: 35px; }
@@ -34,6 +38,15 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .hero-text { max-width: 420px; margin: 17px 0 13px; color: #7c877e; font-size: 13px; line-height: 1.7; }
 .hero-note { color: #a0875e; font-size: 10px; font-weight: 600; }
 .hero-note span { margin-right: 4px; color: var(--gold); }
+.meal-inspiration { margin: 0 0 22px; padding: 17px 20px 19px; border: 1px solid #e8ece3; border-radius: 13px; background: #f4f6ef; }
+.meal-inspiration-heading { display: flex; align-items: end; justify-content: space-between; gap: 15px; margin-bottom: 12px; }
+.meal-inspiration-heading .eyebrow { margin-bottom: 4px; }
+.meal-inspiration-heading h2 { margin: 0; color: #405443; font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 500; }
+.meal-inspiration-heading > p { max-width: 390px; margin: 0; color: #899286; text-align: right; font-size: 10px; line-height: 1.6; }
+.meal-tip-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.meal-tip { min-width: 0; padding: 12px 13px; border: 1px solid #e7ebe3; border-radius: 9px; background: rgba(255,255,255,.86); }
+.meal-tip h3 { margin: 0 0 5px; color: #405443; font-family: Georgia, "Times New Roman", serif; font-size: 12px; font-weight: 500; line-height: 1.45; }
+.meal-tip p { margin: 0; color: #849084; font-size: 9px; line-height: 1.55; }
 .hero-art { position: relative; flex: 0 0 340px; height: 250px; margin-right: 5%; }
 .art-sun { position: absolute; top: 21px; right: 65px; width: 168px; height: 168px; border-radius: 50%; background: #f2e6cb; }
 .art-plate { position: absolute; z-index: 1; top: 44px; right: 87px; width: 164px; height: 164px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 7px solid white; border-radius: 50%; background: #e4ecde; box-shadow: 0 12px 30px rgba(65, 82, 60, .12); transform: rotate(-14deg); }
@@ -161,9 +174,13 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .toast.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 760px) {
-  .topbar { height: 64px; padding: 0 5.5%; }
+  .topbar { min-height: 64px; padding: 10px 5.5%; flex-wrap: wrap; gap: 4px 12px; }
+  .meal-filters { order: 3; width: 100%; justify-content: space-between; border-top: 1px solid #efede5; padding-top: 6px; }
+  .meal-filters button { flex: 1; padding: 8px 6px; }
   .hero { min-height: 265px; }
   .hero-art { flex-basis: 270px; margin-right: -25px; transform: scale(.83); transform-origin: right center; }
+  .meal-inspiration-heading { align-items: flex-start; }
+  .meal-tip-grid { grid-template-columns: 1fr; }
   .week-card { flex-wrap: wrap; gap: 12px 20px; padding: 14px 16px; }
   .week-meta { margin-left: 52px; }
   .refresh-note { margin-left: auto; }

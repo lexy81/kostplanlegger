@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#fbf8f1">
     <meta name="description" content="En enkel, ukentlig middagsplan med mindre karbohydrater for familien.">
     <title>Ukas middager — kostplanlegger</title>
-    <link rel="stylesheet" href="style.css?v=protein-picker-2">
-    <script src="app.js?v=protein-picker-2" defer></script>
+    <link rel="stylesheet" href="style.css?v=meal-inspiration-1">
+    <script src="app.js?v=meal-inspiration-1" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -15,6 +15,12 @@
         <span class="brand-icon" aria-hidden="true">✳</span>
         <span>ukasmiddager<span class="brand-period">.</span></span>
       </a>
+      <nav class="meal-filters" aria-label="Filtrer etter måltid">
+        <button type="button" data-meal-filter="Frokost" aria-pressed="false">Frokost</button>
+        <button type="button" data-meal-filter="Lunsj" aria-pressed="false">Lunsj</button>
+        <button type="button" data-meal-filter="Middag" aria-pressed="true">Middag</button>
+        <button type="button" data-meal-filter="Kvelds" aria-pressed="false">Kvelds</button>
+      </nav>
       <span class="family-label"><span aria-hidden="true">♧</span> For en familie på fire</span>
     </header>
 
@@ -33,6 +39,17 @@
           <span class="art-leaf leaf-two">✳</span>
           <div class="art-table"></div>
         </div>
+      </section>
+
+      <section class="meal-inspiration" aria-labelledby="meal-inspiration-title">
+        <div class="meal-inspiration-heading">
+          <div>
+            <p class="eyebrow">LITT INSPIRASJON TIL DAGEN</p>
+            <h2 id="meal-inspiration-title">Middagstips</h2>
+          </div>
+          <p id="meal-inspiration-intro">Enkle middagsforslag fra ukas oppskriftsbank.</p>
+        </div>
+        <div class="meal-tip-grid" id="meal-tip-grid" aria-live="polite"></div>
       </section>
 
       <section class="week-card" aria-label="Ukeoversikt">

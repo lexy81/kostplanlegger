@@ -648,12 +648,51 @@ const ingredientPriceRules = [
   { pattern: /^gressløk$/i, unit: "", price: 10 },
   { pattern: /^dressing etter ønske$/i, unit: "", price: 15 }
 ];
+const mealInspiration = {
+  Frokost: {
+    title: "Frokosttips",
+    intro: "Raske forslag som gir en god start på dagen.",
+    dishes: [
+      { name: "Omelett med spinat og feta", tip: "Stek egg med spinat og smuldret feta. Lag gjerne ekstra til neste morgen." },
+      { name: "Yoghurtbolle med bær og nøtter", tip: "Topp gresk yoghurt med bær, nøtter og litt frø for mer metthet." },
+      { name: "Avokado og egg", tip: "Server kokt eller stekt egg med avokado og tomat på siden." }
+    ]
+  },
+  Lunsj: {
+    title: "Lunsjtips",
+    intro: "Enkle lunsjer som også er fine å ta med.",
+    dishes: [
+      { name: "Kyllingsalat med avokado", tip: "Bruk rester av kylling, og bland med salat, avokado og en enkel dressing." },
+      { name: "Eggerøre med røkelaks", tip: "Server eggerøre med røkelaks, agurk og litt sitron." },
+      { name: "Tomat- og mozzarellasalat", tip: "Kombiner tomat og mozzarella med basilikum og litt olivenolje." }
+    ]
+  },
+  Middag: {
+    title: "Middagstips",
+    intro: "Enkle middagsforslag fra ukas oppskriftsbank.",
+    dishes: [
+      { recipeId: "tacobolle", tip: "Bytt tortillas med blomkålris og salat for en lettere tacobolle." },
+      { recipeId: "panne", tip: "Kremet kyllingpanne med sopp og spinat er klar på omtrent 25 minutter." },
+      { recipeId: "frittata", tip: "Frittata med spinat, sopp og feta er et godt valg på en travel dag." }
+    ]
+  },
+  Kvelds: {
+    title: "Kveldstips",
+    intro: "Lette kveldsmåltider når du vil ha noe enkelt.",
+    dishes: [
+      { name: "Cottage cheese med bær", tip: "Topp cottage cheese med bær og noen hakkede nøtter." },
+      { name: "Knekkebrød med egg og avokado", tip: "Kombiner egg og avokado, og velg gjerne et fiberrikt knekkebrød." },
+      { name: "Grønnsaker med hummus", tip: "Skjær opp gulrot, paprika og agurk, og server med hummus." }
+    ]
+  }
+};
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 let plan;
 let toastTimeout;
 let wishQuery = "";
 let wishDay = 0;
+let selectedMealFilter = "Middag";
 
 function getWeekInfo(date = new Date()) {
   const monday = new Date(date);
@@ -728,6 +767,24 @@ function formatWeekRange(week) {
 function renderWeekHeader(week) {
   $("#week-range").textContent = formatWeekRange(week);
   $("#week-number").textContent = `Uke ${week.weekNumber}`;
+}
+
+function renderMealInspiration() {
+  const inspiration = mealInspiration[selectedMealFilter];
+  $("#meal-inspiration-title").textContent = inspiration.title;
+  $("#meal-inspiration-intro").textContent = inspiration.intro;
+  $("#meal-tip-grid").innerHTML = inspiration.dishes.map(dish => {
+    const recipe = dish.recipeId ? recipes.find(item => item.id === dish.recipeId) : null;
+    return `
+      <article class="meal-tip">
+        <h3>${recipe ? recipe.name : dish.name}</h3>
+        <p>${dish.tip}</p>
+      </article>`;
+  }).join("");
+  $$("[data-meal-filter]").forEach(button => {
+    const selected = button.dataset.mealFilter === selectedMealFilter;
+    button.setAttribute("aria-pressed", String(selected));
+  });
 }
 
 function normalizeSearch(value) {
@@ -962,6 +1019,7 @@ function render() {
     savePlan();
   }
   renderWeekHeader(week);
+  renderMealInspiration();
   renderWishPicker();
   renderMeals();
   renderShoppingList();
@@ -975,6 +1033,13 @@ function showToast(message) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => toast.classList.remove("is-visible"), 3000);
 }
+
+$(".meal-filters").addEventListener("click", event => {
+  const button = event.target.closest("button[data-meal-filter]");
+  if (!button || !mealInspiration[button.dataset.mealFilter]) return;
+  selectedMealFilter = button.dataset.mealFilter;
+  renderMealInspiration();
+});
 
 $("#meal-list").addEventListener("change", event => {
   const select = event.target.closest("select[data-day]");

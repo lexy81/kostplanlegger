@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf8f1">
+    <meta name="description" content="En enkel, ukentlig middagsplan med mindre karbohydrater for familien.">
+    <title>Ukas middager — kostplanlegger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Ukas middager, til toppen">
+        <span class="brand-icon" aria-hidden="true">✳</span>
+        <span>ukasmiddager<span class="brand-period">.</span></span>
+      </a>
+      <span class="family-label"><span aria-hidden="true">♧</span> For en familie på fire</span>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> EN GOD UKE STARTER RUNDT BORDET</p>
+          <h1 id="page-title">Middagsuka,<br><span>i balanse.</span></h1>
+          <p class="hero-text">Sju gode middager med mindre karbohydrater og plass til familiens favoritter.</p>
+          <div class="hero-note"><span aria-hidden="true">✦</span> Vanlig mat. Enklere valg. Mer tid sammen.</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-sun"></div>
+          <div class="art-plate"><span></span><span></span><span></span></div>
+          <span class="art-leaf leaf-one">❋</span>
+          <span class="art-leaf leaf-two">✳</span>
+          <div class="art-table"></div>
+        </div>
+      </section>
+
+      <section class="week-card" aria-label="Ukeoversikt">
+        <div class="week-date">
+          <span class="calendar-icon" aria-hidden="true">▦</span>
+          <div>
+            <span class="eyebrow">DENNE UKA</span>
+            <h2 id="week-range"></h2>
+          </div>
+        </div>
+        <div class="week-meta">
+          <span class="week-number" id="week-number"></span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span><strong>7</strong> middager</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span><strong>4</strong> porsjoner</span>
+        </div>
+        <div class="refresh-note"><span aria-hidden="true">↻</span> Ny plan hver mandag</div>
+      </section>
+
+      <section class="plan-section" aria-labelledby="plan-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LITT MINDRE PLANLEGGING</p>
+            <h2 id="plan-heading">Middagene deres</h2>
+          </div>
+          <p class="section-aside">Velg en ny rett når dere vil<br><span>Endringene lagres på denne enheten</span></p>
+        </div>
+        <div class="meal-list" id="meal-list" aria-live="polite"></div>
+      </section>
+
+      <section class="shopping-section" aria-labelledby="shopping-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ALT TIL UKAS MIDDAGER</p>
+            <h2 id="shopping-heading">Handleliste</h2>
+          </div>
+          <div class="shopping-progress">
+            <span id="shopping-count">0 av 0 varer handlet</span>
+            <button type="button" id="clear-shopping">Nullstill avkrysning</button>
+          </div>
+        </div>
+        <div class="shopping-card" id="shopping-list" aria-live="polite"></div>
+        <p class="shopping-footnote">Listen følger rettene dere har valgt og summerer ingredienser med samme mengde.</p>
+      </section>
+
+      <aside class="note-card">
+        <span class="note-icon" aria-hidden="true">♡</span>
+        <div>
+          <h2>Fleksibelt for hele familien</h2>
+          <p>Planen har mindre stivelsesrike ingredienser, ikke strenge regler. Sett gjerne fram ekstra brød, ris eller poteter ved siden av for dem som ønsker det.</p>
+        </div>
+      </aside>
+      <p class="disclaimer">Karbohydratmengdene er omtrentlige per porsjon. Dette er middagsinspirasjon, ikke en medisinsk kostplan. Matbildene er fra Unsplash.</p>
+    </main>
+
+    <dialog class="photo-dialog" id="photo-dialog" aria-label="Forstørret bilde av middagen">
+      <button class="photo-dialog-close" id="photo-dialog-close" type="button" aria-label="Lukk bilde">×</button>
+      <img id="photo-dialog-image" alt="">
+      <p id="photo-dialog-caption"></p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer class="footer"><span>God middag, fra oss til dere.</span><span aria-hidden="true">✳</span></footer>
+  </body>
+</html>

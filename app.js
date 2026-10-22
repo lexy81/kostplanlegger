@@ -7,6 +7,7 @@ const recipes = [
     carbs: 12,
     icon: "✳",
     color: "mint",
+    protein: "Kylling",
     ingredients: ["600 g kyllingfilet", "3 ss grønn pesto", "2 squash", "250 g cherrytomater", "150 g crème fraîche"],
     steps: ["Del squash og tomater, og legg dem i en ildfast form.", "Smør pesto på kyllingen og legg den over grønnsakene.", "Stek på 200 °C i ca. 20–25 minutter. Server med crème fraîche."]
   },
@@ -18,6 +19,7 @@ const recipes = [
     carbs: 10,
     icon: "≈",
     color: "peach",
+    protein: "Fisk",
     ingredients: ["600 g laksefilet", "2 brokkoli", "2 dl gresk yoghurt", "1 sitron", "Dill, salt og pepper"],
     steps: ["Del brokkolien i buketter og legg i en ildfast form med laksen.", "Krydre med sitron, salt og pepper. Stek på 200 °C i 15–18 minutter.", "Rør hakket dill og litt sitronsaft inn i yoghurten."]
   },
@@ -29,6 +31,7 @@ const recipes = [
     carbs: 14,
     icon: "◎",
     color: "yellow",
+    protein: "Kjøttdeig",
     ingredients: ["500 g kjøttdeig", "1 blomkål", "1 hjertesalat", "2 avokado", "1 beger salsa", "Taco-krydder"],
     steps: ["Stek kjøttdeigen med tacokrydder.", "Riv blomkålen grovt og stek den i en panne i 4–5 minutter.", "Server med salat, avokado og salsa i hver sin bolle."]
   },
@@ -40,6 +43,7 @@ const recipes = [
     carbs: 16,
     icon: "◉",
     color: "lilac",
+    protein: "Kjøttdeig",
     ingredients: ["600 g kjøttdeig", "1 egg", "1 boks hakkede tomater", "4 squash", "1 løk", "Parmesan"],
     steps: ["Bland kjøttdeig og egg, form små boller og brun dem i en panne.", "Tilsett hakket løk og tomater. La sausen småkoke i 15 minutter.", "Lag squashstrimler med en skreller og server med revet parmesan."]
   },
@@ -51,6 +55,7 @@ const recipes = [
     carbs: 8,
     icon: "◒",
     color: "yellow",
+    protein: "Vegetar",
     ingredients: ["8 egg", "200 g spinat", "200 g sjampinjong", "150 g fetaost", "1 dl melk"],
     steps: ["Stek skivet sopp til den er gyllen, og vend inn spinaten.", "Visp egg og melk, hell over grønnsakene og smuldre feta på toppen.", "Stek på lav varme med lokk, eller i ovnen på 180 °C til eggene har stivnet."]
   },
@@ -62,6 +67,7 @@ const recipes = [
     carbs: 13,
     icon: "⌁",
     color: "mint",
+    protein: "Svin",
     ingredients: ["600 g svinefilet", "1 stort blomkålhode", "300 g grønne bønner", "2 ss smør", "1 dl matfløte"],
     steps: ["Krydre svinefileten og stek den til gjennomstekt. La den hvile før du skjærer den opp.", "Kok blomkål mør, hell av vannet og mos med smør og fløte.", "Kok bønnene raskt i lettsaltet vann og server ved siden av."]
   },
@@ -73,6 +79,7 @@ const recipes = [
     carbs: 15,
     icon: "✺",
     color: "peach",
+    protein: "Sjømat",
     ingredients: ["500 g rensede reker", "1 boks kokosmelk", "1 rød paprika", "200 g sukkererter", "1 blomkål", "2 ss currypaste"],
     steps: ["Varm currypaste i en panne og rør inn kokosmelk.", "Tilsett paprika og sukkererter, og la det småkoke i 8–10 minutter.", "Vend inn rekene til de er varme. Server med lettstekt blomkålris."]
   },
@@ -84,6 +91,7 @@ const recipes = [
     carbs: 14,
     icon: "◉",
     color: "yellow",
+    protein: "Kjøttdeig",
     ingredients: ["600 g kjøttdeig", "1 hjertesalat", "2 tomater", "1 rødløk", "4 skiver cheddar", "Dressing etter ønske"],
     steps: ["Form fire burgere, krydre og stek dem til de er gjennomstekte.", "Legg cheddar på burgerne mot slutten av steketiden.", "Server i salatblader med tomat, rødløk og dressing."]
   },
@@ -95,6 +103,7 @@ const recipes = [
     carbs: 13,
     icon: "✦",
     color: "peach",
+    protein: "Kylling",
     ingredients: ["600 g kyllingfilet", "3 paprika i ulike farger", "1 rødløk", "2 avokado", "1 lime", "Fajitakrydder"],
     steps: ["Skjær kylling og grønnsaker i strimler, og stek med fajitakrydder.", "Mos avokado med limesaft og en klype salt.", "Server fajitaen med avokadokrem og gjerne salatblader."]
   },
@@ -106,6 +115,7 @@ const recipes = [
     carbs: 12,
     icon: "≈",
     color: "lilac",
+    protein: "Fisk",
     ingredients: ["600 g torskefilet", "150 g bacon", "300 g erter", "100 g smør", "1 sitron", "Gressløk"],
     steps: ["Stek bacon sprøtt og legg det til side.", "Bak torsken med litt salt på 200 °C i 12–15 minutter.", "Smelt smør med sitronsaft, og server med varme erter og bacon."]
   },
@@ -117,6 +127,7 @@ const recipes = [
     carbs: 16,
     icon: "❋",
     color: "mint",
+    protein: "Vegetar",
     ingredients: ["400 g halloumi", "1 aubergine", "2 squash", "250 g cherrytomater", "2 ss tahini", "1 sitron"],
     steps: ["Del grønnsakene og bak dem med litt olje på 220 °C i ca. 20 minutter.", "Skjær halloumi i skiver og stek dem gyllene i en panne.", "Rør tahini med sitronsaft og litt vann til en jevn dressing."]
   },
@@ -128,6 +139,7 @@ const recipes = [
     carbs: 17,
     icon: "✿",
     color: "peach",
+    protein: "Kjøttdeig",
     ingredients: ["4 store paprika", "500 g kjøttdeig", "1 løk", "1 boks hakkede tomater", "150 g revet ost"],
     steps: ["Del paprikaene i to og ta ut frøene.", "Stek kjøttdeig og løk, rør inn tomater og fyll paprikaene.", "Topp med ost og stek på 200 °C i ca. 20 minutter."]
   },
@@ -139,6 +151,7 @@ const recipes = [
     carbs: 11,
     icon: "✧",
     color: "lilac",
+    protein: "Kylling",
     ingredients: ["600 g kyllingfilet", "1 agurk", "2 dl gresk yoghurt", "1 sitron", "1 rødløk", "Oregano"],
     steps: ["Skjær kyllingen i biter, krydre med oregano og sitron, og tre på spyd.", "Stek spydene i panne eller ovn til kyllingen er gjennomstekt.", "Riv agurken og bland med yoghurt. Server med en enkel salat."]
   },
@@ -150,8 +163,100 @@ const recipes = [
     carbs: 9,
     icon: "⌂",
     color: "mint",
+    protein: "Kylling",
     ingredients: ["600 g kyllingfilet", "250 g sjampinjong", "150 g spinat", "2 dl matfløte", "1 løk", "1 ss dijonsennep"],
     steps: ["Stek kyllingbitene til de er gylne, og legg dem til side.", "Stek sopp og løk, hell i fløte og rør inn dijonsennep.", "Ha kyllingen tilbake i panna, vend inn spinat og la alt bli varmt."]
+  },
+  {
+    id: "biffstrimler",
+    name: "Biffstrimler med paprika og sopp",
+    description: "Rask panne med mørt storfekjøtt og sprø grønnsaker.",
+    time: 25,
+    carbs: 12,
+    icon: "✦",
+    color: "peach",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biffstrimler", "250 g sjampinjong", "2 paprika", "1 rødløk", "150 g crème fraîche"],
+    steps: ["Stek biffstrimlene raskt på høy varme og legg dem til side.", "Stek sopp, paprika og rødløk til grønnsakene er møre.", "Vend kjøttet inn igjen og server med crème fraîche."]
+  },
+  {
+    id: "biffbrokkoli",
+    name: "Biff med brokkoli og kremet peppersaus",
+    description: "Mør biff med grønne grønnsaker og en mild, kremet saus.",
+    time: 30,
+    carbs: 11,
+    icon: "◈",
+    color: "mint",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biff", "2 brokkoli", "2 dl matfløte", "1 ss dijonsennep", "Pepper"],
+    steps: ["Stek biffen slik dere liker den, og la den hvile før servering.", "Kok eller damp brokkolien til den er mør, men fortsatt har litt tyggemotstand.", "Varm fløte med dijonsennep og pepper, og server til biffen."]
+  },
+  {
+    id: "biffsalat",
+    name: "Lun biffsalat med avokado og feta",
+    description: "Frisk salat med varme biffstrimler, kremet avokado og feta.",
+    time: 20,
+    carbs: 10,
+    icon: "❋",
+    color: "yellow",
+    protein: "Biff",
+    photo: "tacobolle",
+    ingredients: ["500 g biffstrimler", "1 hjertesalat", "2 avokado", "200 g cherrytomater", "100 g fetaost", "1 sitron"],
+    steps: ["Stek biffstrimlene raskt på høy varme og krydre med pepper.", "Fordel salat, avokado, tomater og smuldret feta i en bolle.", "Legg den lune biffen over og press litt sitron over salaten."]
+  },
+  {
+    id: "svinekoteletter",
+    name: "Svinefilet med ovnsbakt paprika og urtedressing",
+    description: "Saftig svin med søt paprika og frisk yoghurtdressing.",
+    time: 30,
+    carbs: 13,
+    icon: "⌁",
+    color: "lilac",
+    protein: "Svin",
+    photo: "svin",
+    ingredients: ["600 g svinefilet", "3 paprika", "2 dl gresk yoghurt", "1 sitron", "Oregano"],
+    steps: ["Del paprika og bak den i ovnen på 220 °C i ca. 15 minutter.", "Stek svinefileten til den er gjennomstekt, og la den hvile før du skjærer den opp.", "Rør yoghurt med sitronsaft og oregano, og server til kjøttet."]
+  },
+  {
+    id: "svinewok",
+    name: "Svinewok med squash og sukkererter",
+    description: "En rask wok med svinestrimler og sprø grønnsaker.",
+    time: 20,
+    carbs: 14,
+    icon: "⌂",
+    color: "mint",
+    protein: "Svin",
+    photo: "panne",
+    ingredients: ["600 g strimlet svinekjøtt", "2 squash", "200 g sukkererter", "1 rød paprika", "2 ss soyasaus"],
+    steps: ["Stek svinestrimlene raskt i en varm wok eller stekepanne.", "Tilsett squash, sukkererter og paprika, og stek i noen minutter til.", "Rør inn soyasaus og server mens grønnsakene fortsatt er sprø."]
+  },
+  {
+    id: "kyllingcurry",
+    name: "Kylling-curry med kokosmelk og blomkålris",
+    description: "Mild og kremet curry som kan krydres ekstra ved bordet.",
+    time: 25,
+    carbs: 15,
+    icon: "✺",
+    color: "peach",
+    protein: "Kylling",
+    photo: "rekecurry",
+    ingredients: ["600 g kyllingfilet", "1 boks kokosmelk", "1 rød paprika", "1 blomkål", "2 ss currypaste"],
+    steps: ["Skjær kyllingen i biter og brun dem i en panne.", "Rør inn currypaste og kokosmelk, og la det småkoke i 10–12 minutter.", "Server curryen med lettstekt blomkålris."]
+  },
+  {
+    id: "kyllingsalat",
+    name: "Kyllingsalat med avokado og feta",
+    description: "En mettende salat med varm kylling og frisk sitrondressing.",
+    time: 20,
+    carbs: 10,
+    icon: "❋",
+    color: "yellow",
+    protein: "Kylling",
+    photo: "tacobolle",
+    ingredients: ["600 g kyllingfilet", "1 hjertesalat", "2 avokado", "200 g cherrytomater", "100 g fetaost", "1 sitron"],
+    steps: ["Stek kyllingfileten med salt og pepper, og skjær den i skiver.", "Fordel salat, avokado, tomater og smuldret feta i en bolle.", "Legg kyllingen over og press litt sitron over salaten."]
   }
 ];
 
@@ -159,10 +264,21 @@ const storageKey = "ukasmiddager-plan-v1";
 const days = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"];
 const shoppingUnits = new Set(["g", "kg", "ml", "dl", "l", "ss", "ts", "boks", "beger", "pakke", "pk", "skive", "skiver", "stk"]);
 const shoppingCategories = ["Frukt og grønt", "Kjøtt, fisk og sjømat", "Meieri og egg", "Annet"];
+const wishCategories = [
+  { name: "Kjøttdeig", aliases: ["kjøttdeig", "kjottdeig", "kjøttdeilg", "kjottdeilg", "karbonadedeig", "deig"] },
+  { name: "Biff", aliases: ["biff", "storfekjøtt", "oksekjøtt", "okse", "steak"] },
+  { name: "Svin", aliases: ["svin", "svinekjøtt", "svinekjøt", "svinefilet", "svinestrimler", "svinekotelett"] },
+  { name: "Kylling", aliases: ["kylling", "kyllingfilet"] },
+  { name: "Fisk", aliases: ["fisk", "laks", "torsk"] },
+  { name: "Sjømat", aliases: ["sjømat", "reker", "skalldyr"] },
+  { name: "Vegetar", aliases: ["vegetar", "grønnsaker", "grønnsak", "vegetarisk"] }
+];
 const ingredientPriceRules = [
   { pattern: /kyllingfilet/i, unit: "g", price: 0.18 },
   { pattern: /laksefilet|torskefilet/i, unit: "g", price: 0.26 },
   { pattern: /svinefilet/i, unit: "g", price: 0.22 },
+  { pattern: /strimlet svinekjøtt/i, unit: "g", price: 0.22 },
+  { pattern: /biffstrimler|^biff$/i, unit: "g", price: 0.32 },
   { pattern: /kjøttdeig/i, unit: "g", price: 0.18 },
   { pattern: /rensede reker/i, unit: "g", price: 0.26 },
   { pattern: /bacon/i, unit: "g", price: 0.22 },
@@ -183,6 +299,8 @@ const ingredientPriceRules = [
   { pattern: /kyllingfilet/i, unit: "kg", price: 180 },
   { pattern: /(?:lakse|torske)filet/i, unit: "kg", price: 260 },
   { pattern: /svinefilet/i, unit: "kg", price: 220 },
+  { pattern: /strimlet svinekjøtt/i, unit: "kg", price: 220 },
+  { pattern: /biffstrimler|^biff$/i, unit: "kg", price: 320 },
   { pattern: /kjøttdeig/i, unit: "kg", price: 180 },
   { pattern: /rensede reker/i, unit: "kg", price: 260 },
   { pattern: /bacon/i, unit: "kg", price: 220 },
@@ -208,9 +326,11 @@ const ingredientPriceRules = [
   { pattern: /salsa/i, unit: "beger", price: 24 },
   { pattern: /(?:grønn pesto|tahini|currypaste|dijonsennep)/i, unit: "ss", price: 2.5 },
   { pattern: /^smør$/i, unit: "ss", price: 2 },
+  { pattern: /^soyasaus$/i, unit: "ss", price: 1.5 },
   { pattern: /(?:taco-krydder|fajitakrydder|oregano)$/i, unit: "", price: 7 },
   { pattern: /^parmesan$/i, unit: "", price: 15 },
   { pattern: /^dill, salt og pepper$/i, unit: "", price: 8 },
+  { pattern: /^pepper$/i, unit: "", price: 5 },
   { pattern: /^gressløk$/i, unit: "", price: 10 },
   { pattern: /^dressing etter ønske$/i, unit: "", price: 15 }
 ];
@@ -218,6 +338,8 @@ const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 let plan;
 let toastTimeout;
+let wishQuery = "";
+let wishDay = 0;
 
 function getWeekInfo(date = new Date()) {
   const monday = new Date(date);
@@ -294,6 +416,58 @@ function renderWeekHeader(week) {
   $("#week-number").textContent = `Uke ${week.weekNumber}`;
 }
 
+function normalizeSearch(value) {
+  return value.trim().toLocaleLowerCase("nb-NO")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function renderWishPicker() {
+  $("#wish-day").innerHTML = days.map((day, index) =>
+    `<option value="${index}" ${index === wishDay ? "selected" : ""}>${day}</option>`
+  ).join("");
+  $("#wish-search").value = wishQuery;
+  $("#wish-shortcuts").innerHTML = wishCategories.slice(0, 4).map(category =>
+    `<button type="button" data-wish-category="${category.name}" class="${normalizeSearch(wishQuery) === normalizeSearch(category.name) ? "is-selected" : ""}">${category.name}</button>`
+  ).join("");
+  renderWishResults();
+}
+
+function getWishRecipes(query) {
+  const normalizedQuery = normalizeSearch(query);
+  if (!normalizedQuery) return [];
+  const category = wishCategories.find(item => item.aliases.some(alias =>
+    normalizeSearch(alias).includes(normalizedQuery) || normalizedQuery.includes(normalizeSearch(alias))
+  ));
+  if (category) return recipes.filter(recipe => recipe.protein === category.name);
+  return recipes.filter(recipe =>
+    normalizeSearch(`${recipe.name} ${recipe.description} ${recipe.ingredients.join(" ")} ${recipe.protein}`)
+      .includes(normalizedQuery)
+  );
+}
+
+function renderWishResults() {
+  const container = $("#wish-results");
+  const results = getWishRecipes(wishQuery);
+  if (!wishQuery.trim()) {
+    container.innerHTML = '<p class="wish-empty">Skriv et middagsønske eller velg en kategori for å se retter.</p>';
+    return;
+  }
+  if (!results.length) {
+    container.innerHTML = '<p class="wish-empty">Fant ingen passende retter. Prøv for eksempel kjøttdeig, biff, svin eller kylling.</p>';
+    return;
+  }
+  container.innerHTML = results.map(recipe => `
+    <article class="wish-result">
+      <div class="wish-result-icon ${recipe.color}" aria-hidden="true">${recipe.icon}</div>
+      <div class="wish-result-copy">
+        <h3>${recipe.name}</h3>
+        <p>${recipe.time} min <span>·</span> ca. ${recipe.carbs} g karbohydrater <span>·</span> ca. ${formatCurrency(getRecipeCost(recipe))}</p>
+      </div>
+      <button type="button" data-add-wish="${recipe.id}">Velg ${days[wishDay].toLowerCase()} <span aria-hidden="true">→</span></button>
+    </article>`).join("");
+}
+
 function renderMeals() {
   const week = getWeekInfo();
   $("#meal-list").innerHTML = plan.meals.map((recipeId, dayIndex) => {
@@ -313,7 +487,7 @@ function renderMeals() {
         <div class="meal-main">
           <button class="meal-photo ${recipe.color}" type="button" data-photo="${recipe.id}" aria-label="Forstørr bilde av ${recipe.name}">
             <span aria-hidden="true">${recipe.icon}</span>
-            <img src="images/${recipe.id}.jpg" alt="" loading="lazy">
+            <img src="images/${recipe.photo || recipe.id}.jpg" alt="" loading="lazy">
           </button>
           <div class="meal-copy">
             <h3>${recipe.name}</h3>
@@ -417,7 +591,7 @@ function shoppingCategory(name) {
   if (/squash|tomat|blomkål|salat|avokado|paprika|løk|brokkoli|spinat|sopp|bønner|erter|aubergine|agurk|sitron|lime|dill|gressløk|oregano|sukkererter/.test(item)) {
     return shoppingCategories[0];
   }
-  if (/kylling|kjøtt|laks|svine|reker|torsk|bacon/.test(item)) return shoppingCategories[1];
+  if (/kylling|kjøtt|biff|okse|laks|svine|reker|torsk|bacon/.test(item)) return shoppingCategories[1];
   if (/yoghurt|feta|crème|fløte|smør|halloumi|ost|parmesan|cheddar|melk|egg/.test(item)) {
     return shoppingCategories[2];
   }
@@ -473,6 +647,7 @@ function render() {
     savePlan();
   }
   renderWeekHeader(week);
+  renderWishPicker();
   renderMeals();
   renderShoppingList();
 }
@@ -499,6 +674,42 @@ $("#meal-list").addEventListener("change", event => {
   renderMeals();
   renderShoppingList();
   showToast(`${days[dayIndex]} er oppdatert til ${recipe.name}.`);
+});
+
+function addWishRecipe(recipeId) {
+  const recipe = recipes.find(item => item.id === recipeId);
+  if (!recipe) return;
+  plan.meals[wishDay] = recipe.id;
+  const availableItems = new Set(getShoppingItems().map(item => item.key));
+  plan.checkedItems = plan.checkedItems.filter(item => availableItems.has(item));
+  savePlan();
+  renderMeals();
+  renderShoppingList();
+  showToast(`${days[wishDay]} er oppdatert til ${recipe.name}.`);
+}
+
+$("#wish-search").addEventListener("input", event => {
+  wishQuery = event.target.value;
+  renderWishPicker();
+});
+
+$("#wish-shortcuts").addEventListener("click", event => {
+  const button = event.target.closest("button[data-wish-category]");
+  if (!button) return;
+  wishQuery = button.dataset.wishCategory;
+  renderWishPicker();
+});
+
+$("#wish-day").addEventListener("change", event => {
+  const dayIndex = Number(event.target.value);
+  if (!Number.isInteger(dayIndex) || dayIndex < 0 || dayIndex >= days.length) return;
+  wishDay = dayIndex;
+  renderWishResults();
+});
+
+$("#wish-results").addEventListener("click", event => {
+  const button = event.target.closest("button[data-add-wish]");
+  if (button) addWishRecipe(button.dataset.addWish);
 });
 
 $("#meal-list").addEventListener("click", event => {

@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#fbf8f1">
     <meta name="description" content="En enkel, ukentlig middagsplan med mindre karbohydrater for familien.">
     <title>Ukas middager — kostplanlegger</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js?v=bcade22" defer></script>
+    <link rel="stylesheet" href="style.css?v=protein-picker-1">
+    <script src="app.js?v=protein-picker-1" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -51,6 +51,33 @@
           <span><strong>4</strong> porsjoner</span>
         </div>
         <div class="refresh-note"><span aria-hidden="true">↻</span> Ny plan hver mandag</div>
+      </section>
+
+      <section class="wish-section" aria-labelledby="wish-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">VELG DET DERE HAR LYST PÅ</p>
+            <h2 id="wish-heading">Middagsønske</h2>
+          </div>
+          <p class="section-aside">Skriv en råvare eller velg en kategori<br><span>Legg en favoritt rett inn på ønsket dag</span></p>
+        </div>
+        <div class="wish-panel">
+          <label class="wish-search">
+            <span aria-hidden="true">⌕</span>
+            <span class="sr-only">Søk etter kjøtt eller middag</span>
+            <input id="wish-search" type="search" placeholder="Prøv kjøttdeig, biff, svin eller kylling..." autocomplete="off">
+          </label>
+          <div class="wish-controls">
+            <div class="wish-shortcuts" id="wish-shortcuts" aria-label="Populære middagsønsker"></div>
+            <label class="wish-day">
+              <span>Legg rettene til</span>
+              <select id="wish-day" aria-label="Velg hvilken dag retten skal legges til"></select>
+            </label>
+          </div>
+          <div class="wish-results" id="wish-results" aria-live="polite">
+            <p class="wish-empty">Skriv et middagsønske eller velg en kategori for å se retter.</p>
+          </div>
+        </div>
       </section>
 
       <section class="plan-section" aria-labelledby="plan-heading">

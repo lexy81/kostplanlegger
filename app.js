@@ -257,6 +257,318 @@ const recipes = [
     photo: "tacobolle",
     ingredients: ["600 g kyllingfilet", "1 hjertesalat", "2 avokado", "200 g cherrytomater", "100 g fetaost", "1 sitron"],
     steps: ["Stek kyllingfileten med salt og pepper, og skjær den i skiver.", "Fordel salat, avokado, tomater og smuldret feta i en bolle.", "Legg kyllingen over og press litt sitron over salaten."]
+  },
+  {
+    id: "biffwok",
+    name: "Biffwok med brokkoli og paprika",
+    description: "Rask wok med møre biffstrimler og fargerike grønnsaker.",
+    time: 25,
+    carbs: 13,
+    icon: "⌂",
+    color: "mint",
+    protein: "Biff",
+    photo: "panne",
+    ingredients: ["600 g biff", "1 brokkoli", "2 paprika", "2 ss soyasaus"],
+    steps: ["Skjær biffen i strimler og stek raskt i en varm panne.", "Tilsett brokkoli og paprika og stek til grønnsakene er passe møre.", "Rør inn soyasaus og server."]
+  },
+  {
+    id: "biffgryte",
+    name: "Kremet biffgryte med sopp",
+    description: "Smakfull gryte med biff, sopp og kremet saus.",
+    time: 35,
+    carbs: 10,
+    icon: "◉",
+    color: "lilac",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biff", "250 g sjampinjong", "2 dl matfløte", "1 løk", "1 ss dijonsennep"],
+    steps: ["Brun biffbitene i en gryte og legg dem til side.", "Stek sopp og løk, og rør inn matfløte og dijonsennep.", "Ha biffen tilbake og la gryta småkoke til kjøttet er mørt."]
+  },
+  {
+    id: "biffspyd",
+    name: "Biffspyd med paprika og yoghurtdressing",
+    description: "Grillede biffspyd med frisk dressing og sprø salat.",
+    time: 30,
+    carbs: 11,
+    icon: "✦",
+    color: "peach",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biff", "2 paprika", "1 rødløk", "2 dl gresk yoghurt", "1 sitron"],
+    steps: ["Skjær biff og grønnsaker i biter og tre dem på spyd.", "Grill eller stek spydene til biffen er stekt slik dere liker den.", "Rør yoghurt med sitronsaft og server som dressing."]
+  },
+  {
+    id: "biffblomkal",
+    name: "Biff med blomkålmos og grønne bønner",
+    description: "Saftig biff servert med myk blomkålmos og grønne bønner.",
+    time: 35,
+    carbs: 12,
+    icon: "≈",
+    color: "yellow",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biff", "1 blomkål", "300 g grønne bønner", "2 ss smør", "1 dl matfløte"],
+    steps: ["Kok blomkål mør og mos med smør og matfløte.", "Stek biffen til ønsket stekegrad, og la den hvile.", "Kok bønnene lett og server alt sammen."]
+  },
+  {
+    id: "biffpanne",
+    name: "Biffpanne med squash og tomat",
+    description: "En enkel panne med biff, squash og saftige tomater.",
+    time: 25,
+    carbs: 12,
+    icon: "⌂",
+    color: "mint",
+    protein: "Biff",
+    photo: "panne",
+    ingredients: ["600 g biff", "2 squash", "250 g cherrytomater", "1 rødløk", "2 ss soyasaus"],
+    steps: ["Stek biffen raskt på høy varme og legg den til side.", "Stek squash, tomater og rødløk i samme panne.", "Vend biffen inn igjen med soyasaus og server."]
+  },
+  {
+    id: "biffsalatvarm",
+    name: "Biffsalat med brokkoli og yoghurtdressing",
+    description: "En varm og mettende salat med mør biff og frisk dressing.",
+    time: 25,
+    carbs: 12,
+    icon: "❋",
+    color: "yellow",
+    protein: "Biff",
+    photo: "tacobolle",
+    ingredients: ["500 g biffstrimler", "1 brokkoli", "1 hjertesalat", "2 dl gresk yoghurt", "1 sitron"],
+    steps: ["Stek biffstrimlene raskt og damp brokkolien mør.", "Fordel salat og brokkoli i en bolle og legg biffen over.", "Rør yoghurt med sitronsaft og server som dressing."]
+  },
+  {
+    id: "biffkarbonade",
+    name: "Biff med stekt sopp og løk",
+    description: "Klassisk kombinasjon av biff, gyllen sopp og løk.",
+    time: 25,
+    carbs: 9,
+    icon: "◈",
+    color: "peach",
+    protein: "Biff",
+    photo: "svin",
+    ingredients: ["600 g biff", "250 g sjampinjong", "2 løk", "2 ss smør", "300 g grønne bønner"],
+    steps: ["Stek soppen og løken gyllen i smør.", "Stek biffen i en varm panne til ønsket stekegrad.", "Server med grønne bønner og stekt sopp og løk."]
+  },
+  {
+    id: "svinesopp",
+    name: "Svinefilet med kremet soppsaus",
+    description: "Mørt svinekjøtt med sopp i en rask, kremet saus.",
+    time: 30,
+    carbs: 9,
+    icon: "◉",
+    color: "lilac",
+    protein: "Svin",
+    photo: "svin",
+    ingredients: ["600 g svinefilet", "250 g sjampinjong", "2 dl matfløte", "1 løk", "1 ss dijonsennep"],
+    steps: ["Skjær svinefileten i skiver og brun dem i en panne.", "Stek sopp og løk, og tilsett matfløte og dijonsennep.", "Legg kjøttet tilbake i sausen og la det bli gjennomstekt."]
+  },
+  {
+    id: "svinepaprika",
+    name: "Svinewok med paprika og blomkålris",
+    description: "Krydret svinekjøtt med paprika og lett blomkålris.",
+    time: 25,
+    carbs: 14,
+    icon: "⌂",
+    color: "mint",
+    protein: "Svin",
+    photo: "panne",
+    ingredients: ["600 g strimlet svinekjøtt", "3 paprika", "1 blomkål", "2 ss soyasaus"],
+    steps: ["Stek svinestrimlene i en varm panne til de er gjennomstekte.", "Riv blomkålen og stek den lett i en egen panne.", "Tilsett paprika og soyasaus til svinekjøttet og server med blomkålris."]
+  },
+  {
+    id: "svinekjottboller",
+    name: "Svineboller i tomatsaus med squash",
+    description: "Saftige svineboller med tomatsaus og squashstrimler.",
+    time: 35,
+    carbs: 15,
+    icon: "◉",
+    color: "peach",
+    protein: "Svin",
+    photo: "kjottboller",
+    ingredients: ["600 g svinekjøttdeig", "1 egg", "1 boks hakkede tomater", "2 squash", "1 løk"],
+    steps: ["Bland svinekjøttdeigen med egg og form små boller.", "Brun bollene og tilsett tomater og hakket løk.", "La sausen småkoke til bollene er gjennomstekte. Server med squashstrimler."]
+  },
+  {
+    id: "svinegrill",
+    name: "Grillet svinefilet med avokadosalat",
+    description: "Grillet svinefilet med frisk salat og kremet avokado.",
+    time: 30,
+    carbs: 10,
+    icon: "✦",
+    color: "yellow",
+    protein: "Svin",
+    photo: "svin",
+    ingredients: ["600 g svinefilet", "1 hjertesalat", "2 avokado", "200 g cherrytomater", "1 sitron"],
+    steps: ["Krydre svinefileten og grill eller stek den til gjennomstekt.", "La kjøttet hvile før du skjærer det i skiver.", "Server med salat, avokado, tomater og litt sitronsaft."]
+  },
+  {
+    id: "svinekrem",
+    name: "Svinefilet i kremet spinatsaus",
+    description: "Svin og spinat i en mild fløtesaus med dijonsennep.",
+    time: 30,
+    carbs: 8,
+    icon: "⌁",
+    color: "lilac",
+    protein: "Svin",
+    photo: "panne",
+    ingredients: ["600 g svinefilet", "150 g spinat", "2 dl matfløte", "1 ss dijonsennep", "250 g sjampinjong"],
+    steps: ["Skjær svinefileten i skiver og brun dem i en panne.", "Tilsett sopp, fløte og dijonsennep og la det småkoke.", "Vend inn spinaten rett før servering."]
+  },
+  {
+    id: "svineform",
+    name: "Svinefilet med ovnsbakt squash og tomat",
+    description: "En enkel ovnsrett med mørt svin og bakte grønnsaker.",
+    time: 35,
+    carbs: 12,
+    icon: "≈",
+    color: "mint",
+    protein: "Svin",
+    photo: "svin",
+    ingredients: ["600 g svinefilet", "2 squash", "250 g cherrytomater", "150 g revet ost"],
+    steps: ["Skjær squash og svinefilet i skiver og legg dem i en ildfast form.", "Fordel cherrytomater og revet ost over.", "Stek på 200 °C til kjøttet er gjennomstekt."]
+  },
+  {
+    id: "svinewokbrokkoli",
+    name: "Svinewok med brokkoli og kremet saus",
+    description: "Svinekjøtt og brokkoli i en mild, kremet panne.",
+    time: 25,
+    carbs: 11,
+    icon: "⌂",
+    color: "peach",
+    protein: "Svin",
+    photo: "panne",
+    ingredients: ["600 g strimlet svinekjøtt", "1 brokkoli", "2 dl matfløte", "1 ss dijonsennep"],
+    steps: ["Stek svinestrimlene raskt i en varm panne.", "Del brokkolien i buketter og stek eller damp den mør.", "Tilsett fløte og dijonsennep, og vend brokkolien inn."]
+  },
+  {
+    id: "kyllingbrokkoli",
+    name: "Kylling med brokkoli og ostesaus",
+    description: "Mild kyllingmiddag med brokkoli og gyllen ostesaus.",
+    time: 30,
+    carbs: 11,
+    icon: "≈",
+    color: "yellow",
+    protein: "Kylling",
+    photo: "pestokylling",
+    ingredients: ["600 g kyllingfilet", "2 brokkoli", "150 g revet ost", "2 dl matfløte"],
+    steps: ["Stek kyllingfileten til den er gjennomstekt.", "Kok eller damp brokkolien til den er mør.", "Varm fløte med revet ost og server over kylling og brokkoli."]
+  },
+  {
+    id: "kyllingspyd",
+    name: "Kyllingspyd med paprika og yoghurtdressing",
+    description: "Saftige kyllingspyd med paprika og frisk yoghurtdressing.",
+    time: 30,
+    carbs: 12,
+    icon: "✦",
+    color: "peach",
+    protein: "Kylling",
+    photo: "pestokylling",
+    ingredients: ["600 g kyllingfilet", "2 paprika", "2 dl gresk yoghurt", "1 sitron", "Oregano"],
+    steps: ["Skjær kylling og paprika i biter og tre på spyd.", "Stek eller grill spydene til kyllingen er gjennomstekt.", "Rør yoghurt med sitron og oregano og server som dressing."]
+  },
+  {
+    id: "kyllingform",
+    name: "Kyllingform med squash og tomater",
+    description: "Saftig kylling bakt sammen med squash og tomater.",
+    time: 35,
+    carbs: 10,
+    icon: "✿",
+    color: "mint",
+    protein: "Kylling",
+    photo: "pestokylling",
+    ingredients: ["600 g kyllingfilet", "2 squash", "250 g cherrytomater", "150 g revet ost"],
+    steps: ["Legg kyllingfilet, skivet squash og tomater i en ildfast form.", "Krydre og dryss revet ost over.", "Stek på 200 °C i ca. 25 minutter, til kyllingen er gjennomstekt."]
+  },
+  {
+    id: "kyllingflote",
+    name: "Kylling i kremet soppsaus",
+    description: "Kyllingfilet med sjampinjong og en enkel fløtesaus.",
+    time: 25,
+    carbs: 8,
+    icon: "◉",
+    color: "lilac",
+    protein: "Kylling",
+    photo: "panne",
+    ingredients: ["600 g kyllingfilet", "250 g sjampinjong", "2 dl matfløte", "1 løk", "1 ss dijonsennep"],
+    steps: ["Stek kyllingbitene til de er gjennomstekte, og legg dem til side.", "Stek sopp og løk, rør inn fløte og dijonsennep.", "Ha kyllingen tilbake i sausen og varm opp."]
+  },
+  {
+    id: "kjottdeigpanne",
+    name: "Kjøttdeigpanne med squash og ost",
+    description: "Rask panne med kjøttdeig, squash og smeltet ost.",
+    time: 25,
+    carbs: 12,
+    icon: "⌂",
+    color: "mint",
+    protein: "Kjøttdeig",
+    photo: "kjottboller",
+    ingredients: ["500 g kjøttdeig", "2 squash", "1 boks hakkede tomater", "150 g revet ost", "1 løk"],
+    steps: ["Stek kjøttdeig og løk i en panne.", "Tilsett squash og hakkede tomater, og la det småkoke i 10 minutter.", "Topp med ost og la den smelte før servering."]
+  },
+  {
+    id: "kjottdeigbrokkoli",
+    name: "Kjøttdeig med brokkoli og kremet saus",
+    description: "Smakfull kjøttdeigmiddag med brokkoli og mild fløtesaus.",
+    time: 25,
+    carbs: 10,
+    icon: "◉",
+    color: "lilac",
+    protein: "Kjøttdeig",
+    photo: "kjottboller",
+    ingredients: ["500 g kjøttdeig", "1 brokkoli", "2 dl matfløte", "1 ss dijonsennep"],
+    steps: ["Stek kjøttdeigen godt i en panne.", "Tilsett fløte og dijonsennep og la sausen småkoke.", "Server med dampet brokkoli."]
+  },
+  {
+    id: "kjottdeigfyltepaprika",
+    name: "Paprika fylt med kjøttdeig og feta",
+    description: "Ovnsbakt paprika med krydret kjøttdeig og fetaost.",
+    time: 35,
+    carbs: 14,
+    icon: "✿",
+    color: "peach",
+    protein: "Kjøttdeig",
+    photo: "paprika",
+    ingredients: ["500 g kjøttdeig", "4 store paprika", "1 boks hakkede tomater", "100 g fetaost", "1 løk"],
+    steps: ["Del paprikaene i to og fjern frøene.", "Stek kjøttdeig og løk, og rør inn hakkede tomater.", "Fyll paprikaene, topp med feta og stek på 200 °C i 20 minutter."]
+  },
+  {
+    id: "kjottdeigblomkal",
+    name: "Kjøttdeig med blomkålmos og tomatsaus",
+    description: "En mettende middag med krydret kjøttdeig og myk blomkålmos.",
+    time: 30,
+    carbs: 13,
+    icon: "≈",
+    color: "yellow",
+    protein: "Kjøttdeig",
+    photo: "kjottboller",
+    ingredients: ["500 g kjøttdeig", "1 blomkål", "1 boks hakkede tomater", "1 løk", "2 ss smør"],
+    steps: ["Stek kjøttdeig og løk, og rør inn hakkede tomater.", "Kok blomkålen mør og mos med smør.", "Server kjøttsausen over blomkålmosen."]
+  },
+  {
+    id: "kjottdeigsopp",
+    name: "Kjøttdeigpanne med sopp og spinat",
+    description: "Kremet kjøttdeigpanne full av sopp og spinat.",
+    time: 25,
+    carbs: 9,
+    icon: "⌂",
+    color: "mint",
+    protein: "Kjøttdeig",
+    photo: "panne",
+    ingredients: ["500 g kjøttdeig", "250 g sjampinjong", "150 g spinat", "2 dl matfløte", "1 løk"],
+    steps: ["Stek kjøttdeig og hakket løk.", "Tilsett sopp og fløte og la det småkoke.", "Vend inn spinat og server når den har falt sammen."]
+  },
+  {
+    id: "kjottdeigboller",
+    name: "Kjøttboller med brokkoli og ost",
+    description: "Små kjøttboller med brokkoli og smeltet ost.",
+    time: 30,
+    carbs: 10,
+    icon: "◉",
+    color: "lilac",
+    protein: "Kjøttdeig",
+    photo: "kjottboller",
+    ingredients: ["500 g kjøttdeig", "1 egg", "1 brokkoli", "150 g revet ost", "1 løk"],
+    steps: ["Bland kjøttdeig med egg og finhakket løk, og form små boller.", "Stek bollene til de er gjennomstekte.", "Server med kokt brokkoli og revet ost."]
   }
 ];
 
@@ -278,6 +590,7 @@ const ingredientPriceRules = [
   { pattern: /laksefilet|torskefilet/i, unit: "g", price: 0.26 },
   { pattern: /svinefilet/i, unit: "g", price: 0.22 },
   { pattern: /strimlet svinekjøtt/i, unit: "g", price: 0.22 },
+  { pattern: /svinekjøttdeig/i, unit: "g", price: 0.22 },
   { pattern: /biffstrimler|^biff$/i, unit: "g", price: 0.32 },
   { pattern: /kjøttdeig/i, unit: "g", price: 0.18 },
   { pattern: /rensede reker/i, unit: "g", price: 0.26 },
@@ -300,6 +613,7 @@ const ingredientPriceRules = [
   { pattern: /(?:lakse|torske)filet/i, unit: "kg", price: 260 },
   { pattern: /svinefilet/i, unit: "kg", price: 220 },
   { pattern: /strimlet svinekjøtt/i, unit: "kg", price: 220 },
+  { pattern: /svinekjøttdeig/i, unit: "kg", price: 220 },
   { pattern: /biffstrimler|^biff$/i, unit: "kg", price: 320 },
   { pattern: /kjøttdeig/i, unit: "kg", price: 180 },
   { pattern: /rensede reker/i, unit: "kg", price: 260 },
@@ -427,9 +741,10 @@ function renderWishPicker() {
     `<option value="${index}" ${index === wishDay ? "selected" : ""}>${day}</option>`
   ).join("");
   $("#wish-search").value = wishQuery;
-  $("#wish-shortcuts").innerHTML = wishCategories.slice(0, 4).map(category =>
-    `<button type="button" data-wish-category="${category.name}" class="${normalizeSearch(wishQuery) === normalizeSearch(category.name) ? "is-selected" : ""}">${category.name}</button>`
-  ).join("");
+  $("#wish-shortcuts").innerHTML = wishCategories.slice(0, 4).map(category => {
+    const count = recipes.filter(recipe => recipe.protein === category.name).length;
+    return `<button type="button" data-wish-category="${category.name}" class="${normalizeSearch(wishQuery) === normalizeSearch(category.name) ? "is-selected" : ""}">${category.name}<span>${count}</span></button>`;
+  }).join("");
   renderWishResults();
 }
 

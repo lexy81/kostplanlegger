@@ -159,6 +159,61 @@ const storageKey = "ukasmiddager-plan-v1";
 const days = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"];
 const shoppingUnits = new Set(["g", "kg", "ml", "dl", "l", "ss", "ts", "boks", "beger", "pakke", "pk", "skive", "skiver", "stk"]);
 const shoppingCategories = ["Frukt og grønt", "Kjøtt, fisk og sjømat", "Meieri og egg", "Annet"];
+const ingredientPriceRules = [
+  { pattern: /kyllingfilet/i, unit: "g", price: 0.18 },
+  { pattern: /laksefilet|torskefilet/i, unit: "g", price: 0.26 },
+  { pattern: /svinefilet/i, unit: "g", price: 0.22 },
+  { pattern: /kjøttdeig/i, unit: "g", price: 0.18 },
+  { pattern: /rensede reker/i, unit: "g", price: 0.26 },
+  { pattern: /bacon/i, unit: "g", price: 0.22 },
+  { pattern: /halloumi/i, unit: "g", price: 0.32 },
+  { pattern: /fetaost/i, unit: "g", price: 0.22 },
+  { pattern: /rev(et)? ost/i, unit: "g", price: 0.15 },
+  { pattern: /crème fraîche/i, unit: "g", price: 0.08 },
+  { pattern: /smør/i, unit: "g", price: 0.14 },
+  { pattern: /spinat/i, unit: "g", price: 0.12 },
+  { pattern: /sjampinjong/i, unit: "g", price: 0.12 },
+  { pattern: /grønne bønner/i, unit: "g", price: 0.12 },
+  { pattern: /erter/i, unit: "g", price: 0.08 },
+  { pattern: /sukkererter/i, unit: "g", price: 0.1 },
+  { pattern: /cherrytomater/i, unit: "g", price: 0.08 },
+  { pattern: /matfløte/i, unit: "dl", price: 4.5 },
+  { pattern: /gresk yoghurt/i, unit: "dl", price: 5 },
+  { pattern: /^melk$/i, unit: "dl", price: 2.5 },
+  { pattern: /kyllingfilet/i, unit: "kg", price: 180 },
+  { pattern: /(?:lakse|torske)filet/i, unit: "kg", price: 260 },
+  { pattern: /svinefilet/i, unit: "kg", price: 220 },
+  { pattern: /kjøttdeig/i, unit: "kg", price: 180 },
+  { pattern: /rensede reker/i, unit: "kg", price: 260 },
+  { pattern: /bacon/i, unit: "kg", price: 220 },
+  { pattern: /halloumi/i, unit: "kg", price: 320 },
+  { pattern: /fetaost/i, unit: "kg", price: 220 },
+  { pattern: /revet ost/i, unit: "kg", price: 150 },
+  { pattern: /crème fraîche/i, unit: "kg", price: 80 },
+  { pattern: /blomkål/i, unit: "", price: 30 },
+  { pattern: /brokkoli/i, unit: "", price: 20 },
+  { pattern: /avokado/i, unit: "", price: 18 },
+  { pattern: /squash/i, unit: "", price: 15 },
+  { pattern: /(?:cherrytomater|tomater)$/i, unit: "kg", price: 80 },
+  { pattern: /^tomater$/i, unit: "", price: 6 },
+  { pattern: /(?:hjertesalat|aubergine|agurk)$/i, unit: "", price: 25 },
+  { pattern: /^(?:rød paprika|rødløk)$/i, unit: "", price: 10 },
+  { pattern: /paprika/i, unit: "", price: 15 },
+  { pattern: /^løk$/i, unit: "", price: 5 },
+  { pattern: /^(?:sitron|lime)$/i, unit: "", price: 6 },
+  { pattern: /^cheddar$/i, unit: "skiver", price: 4 },
+  { pattern: /^egg$/i, unit: "", price: 4 },
+  { pattern: /hakkede tomater/i, unit: "boks", price: 16 },
+  { pattern: /kokosmelk/i, unit: "boks", price: 22 },
+  { pattern: /salsa/i, unit: "beger", price: 24 },
+  { pattern: /(?:grønn pesto|tahini|currypaste|dijonsennep)/i, unit: "ss", price: 2.5 },
+  { pattern: /^smør$/i, unit: "ss", price: 2 },
+  { pattern: /(?:taco-krydder|fajitakrydder|oregano)$/i, unit: "", price: 7 },
+  { pattern: /^parmesan$/i, unit: "", price: 15 },
+  { pattern: /^dill, salt og pepper$/i, unit: "", price: 8 },
+  { pattern: /^gressløk$/i, unit: "", price: 10 },
+  { pattern: /^dressing etter ønske$/i, unit: "", price: 15 }
+];
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 let plan;
@@ -267,6 +322,7 @@ function renderMeals() {
               <span><span aria-hidden="true">◷</span> ${recipe.time} min</span>
               <span><span aria-hidden="true">↘</span> ca. ${recipe.carbs} g karbohydrater</span>
               <span><span aria-hidden="true">♧</span> 4 porsjoner</span>
+              <span><span aria-hidden="true">≈</span> ca. ${formatCurrency(getRecipeCost(recipe))} for fire</span>
             </div>
           </div>
           <label class="meal-select">
@@ -331,10 +387,29 @@ function getShoppingItems() {
       }
     });
   });
-  return [...items.values()].sort((a, b) =>
+  return [...items.values()].map(item => ({
+    ...item,
+    estimatedPrice: estimateIngredientPrice(item)
+  })).sort((a, b) =>
     shoppingCategories.indexOf(a.category) - shoppingCategories.indexOf(b.category) ||
     a.name.localeCompare(b.name, "nb")
   );
+}
+
+function estimateIngredientPrice(item) {
+  const rule = ingredientPriceRules.find(candidate =>
+    candidate.pattern.test(item.name) && candidate.unit === item.unit
+  );
+  if (!rule) return null;
+  const quantity = item.quantity === null ? item.count : item.quantity;
+  return quantity * rule.price;
+}
+
+function getRecipeCost(recipe) {
+  return recipe.ingredients.reduce((total, ingredient) => {
+    const estimate = estimateIngredientPrice({ ...parseShoppingItem(ingredient), count: 1 });
+    return total + (estimate || 0);
+  }, 0);
 }
 
 function shoppingCategory(name) {
@@ -357,6 +432,14 @@ function formatShoppingItem(item) {
   return `${quantity}${item.name}${repeat}`;
 }
 
+function formatCurrency(amount) {
+  return new Intl.NumberFormat("nb-NO", {
+    style: "currency",
+    currency: "NOK",
+    maximumFractionDigits: 0
+  }).format(amount);
+}
+
 function renderShoppingList() {
   const items = getShoppingItems();
   const checked = new Set(plan.checkedItems);
@@ -372,6 +455,7 @@ function renderShoppingList() {
               <input type="checkbox" data-shopping-item="${item.key}" ${checked.has(item.key) ? "checked" : ""}>
               <span>${formatShoppingItem(item)}</span>
             </label>
+            <span class="shopping-item-price">${item.estimatedPrice === null ? "Pris mangler" : `ca. ${formatCurrency(item.estimatedPrice)}`}</span>
           </li>`).join("")}
         </ul>
       </section>`;
@@ -379,6 +463,7 @@ function renderShoppingList() {
   $("#shopping-list").innerHTML = categories || '<p class="shopping-empty">Velg middager for å lage handlelisten.</p>';
   $("#shopping-count").textContent = `${checked.size} av ${items.length} varer handlet`;
   $("#clear-shopping").disabled = checked.size === 0;
+  $("#shopping-total").textContent = `ca. ${formatCurrency(items.reduce((total, item) => total + (item.estimatedPrice || 0), 0))}`;
 }
 
 function render() {
